@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import ws from "ws";
+import { WebSocketServer } from "ws";
 import http from "http";
 import * as map from "lib0/map";
 
@@ -13,7 +13,7 @@ const pingTimeout = 30000;
 
 const port = process.env.PORT || 4444;
 // @ts-ignore
-const wss = new ws.Server({ noServer: true });
+const wss = new WebSocketServer({ noServer: true });
 
 const server = http.createServer((request, response) => {
   response.writeHead(200, { "Content-Type": "text/plain" });
