@@ -86,6 +86,7 @@ const onconnection = (conn) => {
   conn.on(
     "message",
     /** @param {object} message */ (message) => {
+      console.log(`Received message => ${message}`);
       if (typeof message === "string") {
         message = JSON.parse(message);
       }
